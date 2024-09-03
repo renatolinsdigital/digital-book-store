@@ -1,6 +1,6 @@
 # DigitalBookStore by Renato Lins
 
-A simple store app made with React.
+A simple store app made with React. You can check the application working here: https://digitalbookstore.netlify.app.
 
 ## How the application looks like
 
