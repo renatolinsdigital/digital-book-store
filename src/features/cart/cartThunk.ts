@@ -6,7 +6,7 @@ export const fetchProducts = createAsyncThunk<Product[]>(
   'cart/fetchProducts',
   async () => {
     try {
-      const response = await axios.get('data/books.json');
+      const response = await axios.get('public/data/books.json');
       return response.data.products;
     } catch (error) {
       console.error(error);
