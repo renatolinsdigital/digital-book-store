@@ -148,9 +148,7 @@ const TextStyled = styled.span.attrs({
         color: $hoverColorName
           ? allColors[$hoverColorName as keyof AllColors]
           : 'inherit',
-        backgroundColor: $hoverBackgroundColorName
-          ? allColors[$hoverBackgroundColorName as keyof AllColors]
-          : allColors.transparent
+        backgroundColor: allColors[$hoverBackgroundColorName as keyof AllColors]
       }
     };
   }

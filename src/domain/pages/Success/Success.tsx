@@ -65,38 +65,43 @@ const Success = () => {
           $flexDirection="column">
           {downloadItems.map((item, index) => (
             <BoxStyled
-              $isFlexWrapping
-              $borderWidth={2}
               $minWidth="100%"
-              $paddingLeft="1rem"
-              $paddingRight="1rem"
+              $borderWidth={2}
+              $overflow="hidden"
               $isStretched={false}
               $borderStyle="solid"
-              $paddingBottom="1rem"
               $borderRadius="0.25rem"
+              $justifyContent="flex-start"
               $borderColorName="secondary"
-              $justifyContent="space-between"
-              key={`item#${item.id}-${index}`}>
+              key={`item#${item.id}-${index}`}
+              $flexDirection={isSmaller ? 'column' : 'row'}>
               <TextStyled
-                $marginTop="1rem"
+                $flex={1}
+                $isFlexWrapping
+                $paddingLeft="1rem"
+                $paddingTop=".5rem"
+                $paddingRight="1rem"
                 $lineHeightName="tall"
+                $paddingBottom=".75rem"
                 $fontWeightName="semiBold"
+                $hoverBackgroundColorName="tertiary"
+                $minWidth={isSmaller ? '100%' : 'auto'}
                 $fontSizeName={youJokingRight ? 'superSmall' : 'large'}>
                 {item.title}
               </TextStyled>
               <Button
-                $width={140}
-                $maxWidth="100%"
-                $marginTop="1rem"
+                $borderRadius={0}
                 $paddingLeft="1rem"
-                $marginLeft="0.5rem"
                 $paddingTop="0.5rem"
                 $paddingRight="1rem"
-                $fontSizeName="small"
                 $paddingBottom="0.5rem"
-                onClick={() => onProductDownload(item.downloadUrl)}
                 $backgroundColorName="secondary"
-                $hoverBackgroundColorName="secondaryDark">
+                $width={isSmaller ? '100%' : 140}
+                $minHeight={isSmaller ? 'auto' : '100%'}
+                $hoverBackgroundColorName="secondaryDark"
+                onClick={() => onProductDownload(item.downloadUrl)}
+                $fontSizeName={youJokingRight ? 'superSmall' : 'small'}
+                $fontWeightName={youJokingRight ? 'regular' : 'semiBold'}>
                 Download
               </Button>
             </BoxStyled>
